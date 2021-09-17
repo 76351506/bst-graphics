@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+#wraper {
+  border: 1px solid #ccc;
+  z-index: 999;
+}
+
+form {
+  padding: 15px;
+  background-color: #dec;
+}
+
+input,
+textarea {
+  vertical-align: middle;
+}
+form textarea {
+  width: 80%;
+  height: 50px;
+}
+form div {
+  margin-bottom: 15px;
+}
+form div label {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+form input,
+form button {
+  height: 22px;
+}

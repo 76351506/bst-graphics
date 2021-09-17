@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
+    <form>
+      <div>
+        <label for="array">长度</label>
+        <input name="arrayLength" type="number" value="15" />
+        <button name="create">生成数组</button>
+      </div>
+      <div>
+        <label for="array">数组</label>
+        <textarea input name="array" id="array" type="text"></textarea>
+      </div>
+    </form>
+    <div id="wraper" width="800" height="500"></div>
+    <script src="https://gw.alipayobjects.com/os/lib/antv/g6/3.7.1/dist/g6.min.js"></script>
+    <script async type="module">
+      import BinarySearchTree from "./js/binary.js";
+      import Form from "./js/form.js";
+      import Tree from "./js/tree.js";
+
+      let bst = new BinarySearchTree();
+      let form = new Form();
+      let tree = new Tree();
+
+      form.addEvent(() => {
+        bst.clear();
+        Array.from(new Set(form.getArray())).forEach((arr) => bst.insert(arr));
+        tree.render(bst.format());
+      });
+      bst.clear();
+      form.getArray().forEach((arr) => bst.insert(arr));
+      tree.render(bst.format());
+    </script>
+  </body>
+</html>
